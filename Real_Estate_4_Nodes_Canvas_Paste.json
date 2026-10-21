@@ -1,0 +1,454 @@
+[
+  {
+    "parameters": {
+      "operation": "update",
+      "tableId": "leads",
+      "matchType": "allFilters",
+      "filters": {
+        "conditions": [
+          {
+            "keyName": "phone_number",
+            "condition": "eq",
+            "keyValue": "={{ $(\"Extract Data\").item.json.customer_phone }}"
+          }
+        ]
+      },
+      "fieldsUi": {
+        "fieldValues": [
+          {
+            "fieldId": "lead_name",
+            "fieldValue": "={{ $(\"AI Agent1\").item.json.output.lead_name || $(\"Get Lead\").item.json.lead_name || \"\" }}"
+          },
+          {
+            "fieldId": "property_type",
+            "fieldValue": "={{ $(\"AI Agent1\").item.json.output.property_type || $(\"Get Lead\").item.json.property_type || \"\" }}"
+          },
+          {
+            "fieldId": "budget_range",
+            "fieldValue": "={{ $(\"AI Agent1\").item.json.output.budget_range || $(\"Get Lead\").item.json.budget_range || \"\" }}"
+          },
+          {
+            "fieldId": "preferred_location",
+            "fieldValue": "={{ $(\"AI Agent1\").item.json.output.preferred_location || $(\"Get Lead\").item.json.preferred_location || \"\" }}"
+          },
+          {
+            "fieldId": "purpose",
+            "fieldValue": "={{ $(\"AI Agent1\").item.json.output.purpose || $(\"Get Lead\").item.json.purpose || \"\" }}"
+          },
+          {
+            "fieldId": "possession_timeline",
+            "fieldValue": "={{ $(\"AI Agent1\").item.json.output.possession_timeline || $(\"Get Lead\").item.json.possession_timeline || \"\" }}"
+          },
+          {
+            "fieldId": "lead_status",
+            "fieldValue": "={{ $(\"AI Agent1\").item.json.output.lead_status }}"
+          },
+          {
+            "fieldId": "ai_summary",
+            "fieldValue": "={{ $(\"AI Agent1\").item.json.output.ai_summary || $(\"Get Lead\").item.json.ai_summary || \"\" }}"
+          },
+          {
+            "fieldId": "updated_at",
+            "fieldValue": "={{ $now.toISO() }}"
+          }
+        ]
+      }
+    },
+    "id": "1e70584a-2036-45af-a1e1-2f85b10c1f1c",
+    "name": "Update Lead",
+    "type": "n8n-nodes-base.supabase",
+    "typeVersion": 1,
+    "position": [
+      1584,
+      176
+    ],
+    "credentials": {
+      "supabaseApi": {
+        "id": "lvZXIBBlLCebqH5A",
+        "name": "Supabase account"
+      }
+    }
+  },
+  {
+    "parameters": {
+      "operation": "appendOrUpdate",
+      "documentId": {
+        "__rl": true,
+        "mode": "id",
+        "value": "1r9Umi6BsbnN8LUw-HkpWTxfyVd_hOUzOnvc5NU3nIdk"
+      },
+      "sheetName": {
+        "__rl": true,
+        "mode": "name",
+        "value": "Sheet1"
+      },
+      "columns": {
+        "mappingMode": "defineBelow",
+        "value": {
+          "Date & Time": "={{ $now.toFormat(\"dd LLL yyyy, hh:mm a\") }}",
+          "Buyer Name": "={{ $(\"AI Agent1\").item.json.output.lead_name || $(\"Get Lead\").item.json.lead_name || \"\" }}",
+          "WhatsApp Number": "={{ $(\"Extract Data\").item.json.customer_phone }}",
+          "Property Type": "={{ $(\"AI Agent1\").item.json.output.property_type || $(\"Get Lead\").item.json.property_type || \"\" }}",
+          "Budget Range": "={{ $(\"AI Agent1\").item.json.output.budget_range || $(\"Get Lead\").item.json.budget_range || \"\" }}",
+          "Location / Project": "={{ $(\"AI Agent1\").item.json.output.preferred_location || $(\"Get Lead\").item.json.preferred_location || \"\" }}",
+          "Purpose": "={{ $(\"AI Agent1\").item.json.output.purpose || $(\"Get Lead\").item.json.purpose || \"\" }}",
+          "Possession / Visit": "={{ $(\"AI Agent1\").item.json.output.possession_timeline || $(\"Get Lead\").item.json.possession_timeline || \"\" }}",
+          "AI Lead Status": "={{ $(\"AI Agent1\").item.json.output.lead_status.toUpperCase() }}",
+          "AI Summary": "={{ $(\"AI Agent1\").item.json.output.ai_summary }}",
+          "1-Click WhatsApp Link": "={{ \"https://wa.me/\" + $(\"Extract Data\").item.json.customer_phone }}"
+        },
+        "schema": [
+          {
+            "id": "Date & Time",
+            "displayName": "Date & Time",
+            "required": false,
+            "defaultMatch": false,
+            "display": true,
+            "type": "string",
+            "canBeUsedToMatch": true
+          },
+          {
+            "id": "Buyer Name",
+            "displayName": "Buyer Name",
+            "required": false,
+            "defaultMatch": false,
+            "display": true,
+            "type": "string",
+            "canBeUsedToMatch": true
+          },
+          {
+            "id": "WhatsApp Number",
+            "displayName": "WhatsApp Number",
+            "required": false,
+            "defaultMatch": false,
+            "display": true,
+            "type": "string",
+            "canBeUsedToMatch": true
+          },
+          {
+            "id": "Property Type",
+            "displayName": "Property Type",
+            "required": false,
+            "defaultMatch": false,
+            "display": true,
+            "type": "string",
+            "canBeUsedToMatch": true
+          },
+          {
+            "id": "Budget Range",
+            "displayName": "Budget Range",
+            "required": false,
+            "defaultMatch": false,
+            "display": true,
+            "type": "string",
+            "canBeUsedToMatch": true
+          },
+          {
+            "id": "Location / Project",
+            "displayName": "Location / Project",
+            "required": false,
+            "defaultMatch": false,
+            "display": true,
+            "type": "string",
+            "canBeUsedToMatch": true
+          },
+          {
+            "id": "Purpose",
+            "displayName": "Purpose",
+            "required": false,
+            "defaultMatch": false,
+            "display": true,
+            "type": "string",
+            "canBeUsedToMatch": true
+          },
+          {
+            "id": "Possession / Visit",
+            "displayName": "Possession / Visit",
+            "required": false,
+            "defaultMatch": false,
+            "display": true,
+            "type": "string",
+            "canBeUsedToMatch": true
+          },
+          {
+            "id": "AI Lead Status",
+            "displayName": "AI Lead Status",
+            "required": false,
+            "defaultMatch": false,
+            "display": true,
+            "type": "string",
+            "canBeUsedToMatch": true
+          },
+          {
+            "id": "AI Summary",
+            "displayName": "AI Summary",
+            "required": false,
+            "defaultMatch": false,
+            "display": true,
+            "type": "string",
+            "canBeUsedToMatch": true
+          },
+          {
+            "id": "Sales Agent Status",
+            "displayName": "Sales Agent Status",
+            "required": false,
+            "defaultMatch": false,
+            "display": true,
+            "type": "string",
+            "canBeUsedToMatch": true
+          },
+          {
+            "id": "1-Click WhatsApp Link",
+            "displayName": "1-Click WhatsApp Link",
+            "required": false,
+            "defaultMatch": false,
+            "display": true,
+            "type": "string",
+            "canBeUsedToMatch": true
+          }
+        ],
+        "matchingColumns": [
+          "WhatsApp Number"
+        ]
+      },
+      "options": {}
+    },
+    "id": "c5e1deee-4ef2-467e-86b4-a501f2004083",
+    "name": "Sync Sheet (Existing Lead)",
+    "type": "n8n-nodes-base.googleSheets",
+    "typeVersion": 4.7,
+    "position": [
+      1792,
+      176
+    ],
+    "credentials": {
+      "googleSheetsOAuth2Api": {
+        "id": "zWvGzAnIte8EqC1t",
+        "name": "Google Sheets account"
+      }
+    }
+  },
+  {
+    "parameters": {
+      "tableId": "leads",
+      "fieldsUi": {
+        "fieldValues": [
+          {
+            "fieldId": "phone_number",
+            "fieldValue": "={{ $(\"Extract Data\").item.json.customer_phone }}"
+          },
+          {
+            "fieldId": "lead_name",
+            "fieldValue": "={{ $(\"AI Agent1\").item.json.output.lead_name }}"
+          },
+          {
+            "fieldId": "property_type",
+            "fieldValue": "={{ $(\"AI Agent1\").item.json.output.property_type }}"
+          },
+          {
+            "fieldId": "budget_range",
+            "fieldValue": "={{ $(\"AI Agent1\").item.json.output.budget_range }}"
+          },
+          {
+            "fieldId": "preferred_location",
+            "fieldValue": "={{ $(\"AI Agent1\").item.json.output.preferred_location }}"
+          },
+          {
+            "fieldId": "purpose",
+            "fieldValue": "={{ $(\"AI Agent1\").item.json.output.purpose }}"
+          },
+          {
+            "fieldId": "possession_timeline",
+            "fieldValue": "={{ $(\"AI Agent1\").item.json.output.possession_timeline }}"
+          },
+          {
+            "fieldId": "lead_status",
+            "fieldValue": "={{ $(\"AI Agent1\").item.json.output.lead_status }}"
+          },
+          {
+            "fieldId": "ai_summary",
+            "fieldValue": "={{ $(\"AI Agent1\").item.json.output.ai_summary }}"
+          },
+          {
+            "fieldId": "updated_at",
+            "fieldValue": "={{ $now.toISO() }}"
+          }
+        ]
+      }
+    },
+    "id": "a2a7029c-a1c6-426f-80fd-c97253efac95",
+    "name": "Create Lead",
+    "type": "n8n-nodes-base.supabase",
+    "typeVersion": 1,
+    "position": [
+      1600,
+      368
+    ],
+    "credentials": {
+      "supabaseApi": {
+        "id": "lvZXIBBlLCebqH5A",
+        "name": "Supabase account"
+      }
+    }
+  },
+  {
+    "parameters": {
+      "operation": "appendOrUpdate",
+      "documentId": {
+        "__rl": true,
+        "mode": "id",
+        "value": "1r9Umi6BsbnN8LUw-HkpWTxfyVd_hOUzOnvc5NU3nIdk"
+      },
+      "sheetName": {
+        "__rl": true,
+        "mode": "name",
+        "value": "Sheet1"
+      },
+      "columns": {
+        "mappingMode": "defineBelow",
+        "value": {
+          "Date & Time": "={{ $now.toFormat(\"dd LLL yyyy, hh:mm a\") }}",
+          "Buyer Name": "={{ $(\"AI Agent1\").item.json.output.lead_name || $(\"Get Lead\").item.json.lead_name || \"\" }}",
+          "WhatsApp Number": "={{ $(\"Extract Data\").item.json.customer_phone }}",
+          "Property Type": "={{ $(\"AI Agent1\").item.json.output.property_type || $(\"Get Lead\").item.json.property_type || \"\" }}",
+          "Budget Range": "={{ $(\"AI Agent1\").item.json.output.budget_range || $(\"Get Lead\").item.json.budget_range || \"\" }}",
+          "Location / Project": "={{ $(\"AI Agent1\").item.json.output.preferred_location || $(\"Get Lead\").item.json.preferred_location || \"\" }}",
+          "Purpose": "={{ $(\"AI Agent1\").item.json.output.purpose || $(\"Get Lead\").item.json.purpose || \"\" }}",
+          "Possession / Visit": "={{ $(\"AI Agent1\").item.json.output.possession_timeline || $(\"Get Lead\").item.json.possession_timeline || \"\" }}",
+          "AI Lead Status": "={{ $(\"AI Agent1\").item.json.output.lead_status.toUpperCase() }}",
+          "AI Summary": "={{ $(\"AI Agent1\").item.json.output.ai_summary }}",
+          "1-Click WhatsApp Link": "={{ \"https://wa.me/\" + $(\"Extract Data\").item.json.customer_phone }}",
+          "Sales Agent Status": "New"
+        },
+        "schema": [
+          {
+            "id": "Date & Time",
+            "displayName": "Date & Time",
+            "required": false,
+            "defaultMatch": false,
+            "display": true,
+            "type": "string",
+            "canBeUsedToMatch": true
+          },
+          {
+            "id": "Buyer Name",
+            "displayName": "Buyer Name",
+            "required": false,
+            "defaultMatch": false,
+            "display": true,
+            "type": "string",
+            "canBeUsedToMatch": true
+          },
+          {
+            "id": "WhatsApp Number",
+            "displayName": "WhatsApp Number",
+            "required": false,
+            "defaultMatch": false,
+            "display": true,
+            "type": "string",
+            "canBeUsedToMatch": true
+          },
+          {
+            "id": "Property Type",
+            "displayName": "Property Type",
+            "required": false,
+            "defaultMatch": false,
+            "display": true,
+            "type": "string",
+            "canBeUsedToMatch": true
+          },
+          {
+            "id": "Budget Range",
+            "displayName": "Budget Range",
+            "required": false,
+            "defaultMatch": false,
+            "display": true,
+            "type": "string",
+            "canBeUsedToMatch": true
+          },
+          {
+            "id": "Location / Project",
+            "displayName": "Location / Project",
+            "required": false,
+            "defaultMatch": false,
+            "display": true,
+            "type": "string",
+            "canBeUsedToMatch": true
+          },
+          {
+            "id": "Purpose",
+            "displayName": "Purpose",
+            "required": false,
+            "defaultMatch": false,
+            "display": true,
+            "type": "string",
+            "canBeUsedToMatch": true
+          },
+          {
+            "id": "Possession / Visit",
+            "displayName": "Possession / Visit",
+            "required": false,
+            "defaultMatch": false,
+            "display": true,
+            "type": "string",
+            "canBeUsedToMatch": true
+          },
+          {
+            "id": "AI Lead Status",
+            "displayName": "AI Lead Status",
+            "required": false,
+            "defaultMatch": false,
+            "display": true,
+            "type": "string",
+            "canBeUsedToMatch": true
+          },
+          {
+            "id": "AI Summary",
+            "displayName": "AI Summary",
+            "required": false,
+            "defaultMatch": false,
+            "display": true,
+            "type": "string",
+            "canBeUsedToMatch": true
+          },
+          {
+            "id": "Sales Agent Status",
+            "displayName": "Sales Agent Status",
+            "required": false,
+            "defaultMatch": false,
+            "display": true,
+            "type": "string",
+            "canBeUsedToMatch": true
+          },
+          {
+            "id": "1-Click WhatsApp Link",
+            "displayName": "1-Click WhatsApp Link",
+            "required": false,
+            "defaultMatch": false,
+            "display": true,
+            "type": "string",
+            "canBeUsedToMatch": true
+          }
+        ],
+        "matchingColumns": [
+          "WhatsApp Number"
+        ]
+      },
+      "options": {}
+    },
+    "id": "c64be81d-4a06-4393-8e62-d329838a26a0",
+    "name": "Sync Sheet (New Lead)",
+    "type": "n8n-nodes-base.googleSheets",
+    "typeVersion": 4.7,
+    "position": [
+      1792,
+      368
+    ],
+    "credentials": {
+      "googleSheetsOAuth2Api": {
+        "id": "zWvGzAnIte8EqC1t",
+        "name": "Google Sheets account"
+      }
+    }
+  }
+]
