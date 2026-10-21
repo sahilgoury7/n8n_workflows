@@ -96,8 +96,11 @@ Ek 24/7 intelligent WhatsApp AI Property Advisor jo:
 - **Google Sheets:** Authenticate Google Sheets OAuth2 to sync leads with your Master CRM.
 - **Telegram Bot:** Enter your Bot Token and Sales Team Group ID (`-100...`).
 
-### Step 3: Sales Kit & Client Acquisition
-Is folder me complete Agency Go-To-Market execution kit shamil hai:
-- 📋 [DAILY_EXECUTION_CHECKLIST_AND_ROADMAP.md](./DAILY_EXECUTION_CHECKLIST_AND_ROADMAP.md) — 7-Day Sprint, Cold Calling Script, 25-Min Doctor Framework Closing Meeting, Onboarding Checklist & Credentials Handover Template.
-- 🎯 [PROSPECTING_GUIDE_AND_SHEET_TEMPLATE.md](./PROSPECTING_GUIDE_AND_SHEET_TEMPLATE.md) — Meta Ads Library Lead Scraping Blueprint & 12-Column Google Sheet Prospect Tracker.
-- 🏗️ [PROJECT_PLAN_AND_TRACKER.md](./PROJECT_PLAN_AND_TRACKER.md) — Architecture & Schemas.
+### Step 3: Test & Go Live
+1. Toggle the workflow to **Active**.
+2. Send a test WhatsApp message to your business number.
+3. Verify that:
+   - The AI responds within 5 seconds.
+   - The buyer lead row is appended in Google Sheets CRM with a direct WhatsApp chat link.
+   - When qualified as high-intent, the Telegram Siren Alert is triggered immediately!
+

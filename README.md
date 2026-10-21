@@ -12,20 +12,13 @@ n8n_workflows/
 │
 ├── 🎓 coaching-institute-ai-admission/      # High-Ticket Coaching WhatsApp AI Admission System
 │   ├── Apex_Lead_Qualifier.json            # Full n8n Workflow (Drive RAG + Supabase + Telegram)
-│   ├── README.md                           # Architecture, Database Schema, & Setup Guide
-│   ├── APEX_LEAD_QUALIFIER_SPEC.md         # Technical Specifications
-│   └── RAG_INGESTION_SPEC.md               # Supabase Vector Store Ingestion Spec
+│   └── README.md                           # Architecture, Database Schema, & Setup Guide
 │
 ├── 🏢 real-estate-ai-sales-advisor/         # Real Estate WhatsApp AI Sales Engine
 │   ├── Real_Estate_Lead_Qualifier.json     # Full n8n Workflow (21 Nodes, 10s Dedup, Sheets CRM)
-│   ├── Real_Estate_4_Nodes_Canvas_Paste.json # Canvas helper nodes
-│   ├── README.md                           # Architecture, 1-Question Rule, & Setup Guide
-│   ├── DAILY_EXECUTION_CHECKLIST_AND_ROADMAP.md # Cold Calling, Doctor Closing, & Onboarding Kit
-│   ├── PROSPECTING_GUIDE_AND_SHEET_TEMPLATE.md  # Meta Ads Library Scraping & 12-Col CRM Template
-│   └── PROJECT_PLAN_AND_TRACKER.md         # Master Architecture & Milestone Tracker
+│   └── README.md                           # Architecture, 1-Question Rule, & Setup Guide
 │
-├── AGENCY_SALES_AND_CLIENT_ROADMAP.md      # Agency Go-To-Market Playbook
-├── ChakraBridge.json                       # Inbound/Outbound ChakraHQ Webhook Bridge
+├── .gitignore                              # Clean Git Ignore
 └── README.md                               # Master Repository Documentation (this file)
 ```
 
