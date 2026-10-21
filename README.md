@@ -67,5 +67,7 @@ n8n_workflows/
 
 ## 👤 Author & Maintainer
 - **Agency Founder:** Sahil Goury  
-- **Email:** sahilgoury7@gmail.com  
-- **GitHub:** [@sahilgoury7](https://github.com/sahilgoury7)
+- **LinkedIn:** [Sahil Goury](https://www.linkedin.com/in/sahil-goury-269107370/)  
+- **GitHub:** [@sahilgoury7](https://github.com/sahilgoury7)  
+- **Email:** sahilgoury7@gmail.com
+

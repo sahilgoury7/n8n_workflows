@@ -104,3 +104,12 @@ Ek 24/7 intelligent WhatsApp AI Property Advisor jo:
    - The buyer lead row is appended in Google Sheets CRM with a direct WhatsApp chat link.
    - When qualified as high-intent, the Telegram Siren Alert is triggered immediately!
 
+---
+
+## 👤 Author & Maintainer
+- **Agency Founder:** Sahil Goury  
+- **LinkedIn:** [Sahil Goury](https://www.linkedin.com/in/sahil-goury-269107370/)  
+- **GitHub:** [@sahilgoury7](https://github.com/sahilgoury7)  
+- **Email:** sahilgoury7@gmail.com
+
+

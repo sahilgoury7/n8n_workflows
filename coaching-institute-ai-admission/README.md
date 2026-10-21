@@ -120,3 +120,12 @@ CREATE TABLE public.documents (
 
 ### Step 3: Knowledge Base Ingestion
 - Upload institute brochure, fee structure, and batch schedule via the automated Drive-to-Supabase ingestion branch or run vector store indexing.
+
+---
+
+## 👤 Author & Maintainer
+- **Agency Founder:** Sahil Goury  
+- **LinkedIn:** [Sahil Goury](https://www.linkedin.com/in/sahil-goury-269107370/)  
+- **GitHub:** [@sahilgoury7](https://github.com/sahilgoury7)  
+- **Email:** sahilgoury7@gmail.com
+
